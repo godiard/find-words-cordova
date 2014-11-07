@@ -105,16 +105,8 @@ Build the apk
 cordova build android
 ```
 
-
- 
-
-
-
-
-
-
-
-
+# Links
 
 [1] http://cordova.apache.org/docs/en/4.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface
+
 [2] http://developer.android.com/sdk/installing/index.html?pkg=adt
