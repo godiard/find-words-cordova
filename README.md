@@ -105,7 +105,26 @@ Build the apk
 cordova build android
 ```
 
-# Links
+## Testing the apk
+
+With the "adb" tool is possible install the apk remotely and see the logs
+
+In this case, the ip of my android device is 192.168.0.4
+
+```
+$ adb connect 192.168.0.4
+
+$ adb install -r /home/gonzalo/sugar-devel/activities/wordfind/find-words-cordova/platforms/android/ant-build/CordovaApp-debug.apk
+
+```
+
+To see the logs
+
+```
+$ adb logcat
+```
+
+## Links
 
 [1] http://cordova.apache.org/docs/en/4.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface
 
