@@ -20,4 +20,5 @@
     <preference name="webviewbounce" value="false"/>
     <preference name="disallowoverscroll" value="true"/>
     <preference name="android-minSdkVersion" value="14"/>
+    <preference name="orientation" value="landscape"/>
 </widget>
