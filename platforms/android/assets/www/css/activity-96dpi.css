@@ -1,0 +1,18 @@
+#rightPanel {
+  font-size: 24px;
+}
+
+.level-button {
+  height: 77px;
+  width: 77px;
+}
+
+#add-word-button {
+  height: 77px;  /* 7 * @subcell-size;  */
+  width: 77px;
+}
+
+#random-words-button {
+  height: 75px;
+  width: 75px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+    <title>Find Words</title>
+    <link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
+          href="lib/sugar-web/graphics/css/sugar-96dpi.css">
+    <link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)"
+          href="lib/sugar-web/graphics/css/sugar-200dpi.css">
+
+    <link rel="stylesheet" type="text/css" href="css/activity.css">
+    <link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
+          href="css/activity-96dpi.css">
+    <link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)"
+          href="css/activity-200dpi.css">
+    <link rel="stylesheet" media="(max-height: 600px)"
+          href="css/activity-small-screen.css">
+    <link rel="stylesheet" media="(max-width: 700px)"
+          href="css/activity-small-screen.css">
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script data-main="js/loader" src="lib/require.js"></script>
+    <link rel="prefetch" type="application/l10n" href="./localization.ini" />
+
+  </head>
+  
+  <body>
+    <div id="main-toolbar" class="toolbar" style="display:none">
+      <button class="toolbutton" id="activity-button" title="Find Words">
+      </button>
+      <hr/>
+      <button class="toolbutton" id="back-button"
+            title="Back">
+      </button>
+      <button class="toolbutton" id="upperlower-button"
+            title="Upercase/Lowercase">
+      </button>
+      <button class="toolbutton" id="audio-button"
+            title="Audio">
+      </button>
+      <button class="toolbutton pull-right" id="stop-button" title="Stop">
+      </button>
+    </div>
+    <div id="canvas">
+        <div id="validation-error" style="display:none"></div>
+        <div id="intro">
+            <canvas id="introCanvas">
+            </canvas>
+        </div>
+        <div id="game" style="display:none;width=100%">
+            <table width="100%">
+                <tr>
+                    <td id="wordList">
+                        <canvas id="wordListCanvas">
+                        </canvas>
+                    </td>
+                    <td align="center" id="rightPanel" width="80%">
+                        <div id="firstPage">
+                            <table class="loadData"><tr><td>
+                                <span data-l10n-id="SelectDifficulty">
+                                Select Difficulty
+                                </span>
+                            </td></tr><tr><td style="text-align:center">
+                                <button class="level-button" id="easy-button">
+                                </button>
+                                <button class="level-button" id="medium-button">
+                                </button>
+                                <button class="level-button" id="hard-button">
+                                </button>
+                            </td></tr><tr><td>
+                            <span data-l10n-id="AddWord">Add Word</span>
+                            </td></tr><tr><td>
+                                <input type="text" id="word-input" maxlength="12">
+                                <button id="add-word-button"></button>
+                                <button id="random-words-button"></button>
+                            </td></tr><tr><td style="text-align:center">
+                                <button class="blueButton" id="start-game-button"
+                                 data-l10n-id="Start" disabled>Start
+                                <img src="./icons/loupe.svg"/>
+                                </button>
+                            </td></tr></table>
+                        </div>
+                        <canvas id="gameCanvas" style="display:none">
+                        </canvas>
+                    </td>
+                </tr>
+            <table>
+        </div>
+    </div>
+
+  </body>
+
+</html>

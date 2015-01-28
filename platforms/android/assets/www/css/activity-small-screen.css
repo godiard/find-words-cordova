@@ -1,0 +1,48 @@
+#rightPanel {
+  font-size: 24px;
+}
+
+#firstPage {
+  font: 1em sans-serif;
+}
+
+.blueButton {
+  padding: 10px;
+  font-size: 32px;
+}
+
+.blueButton img {
+  height: 30px;
+  vertical-align:middle;
+  padding-left:10px;
+}
+
+.level-button {
+  height: 60px;
+  width: 60px;
+  margin: 11px;
+}
+
+#add-word-button {
+  height: 60px;
+  width: 60px;
+}
+
+#random-words-button {
+  height: 62px;
+  width: 62px;
+}
+
+table.loadData {
+  margin-top: 5px;
+}
+
+table.loadData input {
+  font-size: 32px;
+  width: 150px;
+  padding: 10px;
+}
+
+table.loadData td {
+  padding: 5px;
+}

@@ -1,0 +1,23 @@
+#rightPanel {
+  font-size: 24px;
+}
+
+.blueButton {
+  padding: 10px;
+  font-size: 55px;
+}
+
+.level-button {
+  height: 105px;
+  width: 105px;
+}
+
+#add-word-button {
+  height: 100px;
+  width: 100px;
+}
+
+#random-words-button {
+  height: 90px;
+  width: 90px;
+}

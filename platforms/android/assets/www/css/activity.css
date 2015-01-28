@@ -1,0 +1,210 @@
+/* Change url(../activity/activity-helloworld.svg); for set your custom activity icon */
+#main-toolbar #activity-button {
+  background-image: url(../activity/icon.svg);
+}
+
+#upperlower-button {
+  background-image: url(../icons/uppercase-lowercase.svg);
+}
+
+#back-button {
+  background-image: url(../icons/arrow.svg);
+}
+
+#audio-button {
+  background-image: url(../icons/audio.svg);
+}
+
+#canvas p {
+  margin-top: 25%;
+  text-align: center;
+}
+
+#canvas {
+  /*
+  overwrite the definition in sugar-web/graphics/css/sugar.css
+  to workaroud a bug affecting webkit on android 4.1/4.2
+  https://code.google.com/p/android/issues/detail?id=41312
+  */
+  overflow-y: visible;
+
+  background-color: #38a4dd;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#intro {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+}
+
+#introCanvas {
+  background-color: #38a4dd;
+}
+
+body {
+  background-color: #38a4dd;
+  position: fixed;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+input, button {
+    vertical-align:middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 0px solid black;
+}
+
+table td {
+  padding: 0px;
+}
+
+#firstPage {
+  align:center;
+  text-align: center;
+  font: 2em sans-serif;
+}
+
+#rightPanel {
+  background: -webkit-gradient(linear, right bottom, 55% 55%, from(#AECFEE),
+                               to(#ffffff));
+
+  background: linear-gradient(to top left, #AECFEE, #ffffff 50%);
+  color: #03a9f4;
+  outline: 0;
+}
+
+*:focus {
+    outline: 0;
+}
+
+.level-button {
+  vertical-align:middle;
+  background-size: 100%;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0px;
+  padding: 11px; /* @subcell-size;  */
+  margin: 22px;
+}
+
+.level-button:hover {
+  background-color: transparent;
+}
+
+#easy-button {
+  background-image: url('../icons/easy.svg');
+}
+
+#medium-button {
+  background-image: url('../icons/medium.svg');
+}
+
+#hard-button {
+  background-image: url('../icons/hard.svg');
+}
+
+#add-word-button {
+  background-image: url('../icons/plus.svg');
+  background-size: 100%;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0px;
+  padding: 11px; /* @subcell-size;  */
+}
+
+#random-words-button {
+  background-image: url('../images/dice-random.svg');
+  background-size: 100%;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0px;
+  padding: 11px;
+}
+
+#add-word-button:hover {
+  background-color: transparent;
+}
+
+.blueButton {
+  background-color: #03a9f4;
+  padding: 10px;
+  font-size: 55px;
+}
+
+.blueButton:disabled {
+  background-color: #7c7c7c;
+}
+
+.blueButton:hover {
+  border-color: transparent;
+}
+
+.blueButton img {
+  height: 60px;
+  vertical-align:middle;
+  padding-left:20px;
+}
+
+
+.blueBorderButton {
+  padding: 10px;
+  font: 1.5em sans-serif;
+  background-color: #ffffff;
+  border-color: #03a9f4;
+  color: #222222;
+}
+
+.blueBorderButton:hover, .blueBorderButton:focus {
+  background-color: #ffffff;
+  border-color: #03a9f4;
+  border-width: 4px;
+}
+
+#find-words-button:disabled, #find-words-button:hover, #find-words-button:active {
+  background-color: #03a9f4;
+  color: white;
+}
+
+#validation-error {
+  position: absolute;
+  background-image: url('../icons/red_pin.png');
+  background-repeat: no-repeat;
+}
+
+#validation-error-msg {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #c13333;
+  color: white;
+  border-radius: 5px;
+  /* left: 1200px; */
+}
+
+table.loadData {
+  margin-top: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+}
+
+table.loadData input {
+  font-size: 40px;
+  width: 300px;
+  padding: 20px;
+}
+
+table.loadData td {
+  padding: 10px;
+}

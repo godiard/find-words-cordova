@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.sugarlabs.FindWords" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <name>FindWords</name>
+    <description>
+        A game to find hidden words in a grid
+    </description>
+    <author email="godiard@gmail.com" href="http://cordova.io">
+        Gonzalo Odiard
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="res/icon.png" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="permissions" value="none" />
+    <preference name="fullscreen" value="true" />
+    <preference name="uiwebviewbounce" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="disallowoverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="orientation" value="landscape" />
+</widget>

@@ -1,0 +1,21 @@
+TODO:
+
+* Implement animation in error bubble.
+* Implement animation in change level.
+* Implement remove word.
+
+* web activity is not saving when close?
+
+DONE:
+* Change "Level" icons.
+* Change "Case" icon.
+* Add "Back" button.
+* Add "Sound" button.
+* Don't allow select words while in the animation
+* persist values of level and sound
+* Show found words in the word list
+* don't mark words two times
+* mark words in the grid with line in the border and different colors
+
+
+
