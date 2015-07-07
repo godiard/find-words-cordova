@@ -3,6 +3,8 @@ define(function (require) {
     var icon = require("sugar-web/graphics/icon");
 
     var l10n = require("webL10n");
+    var lang = navigator.language.substr(0, 2)
+    console.log('LANG ' + lang);
 
     function _(text) {
         // this function add a fallback for the case of translation not found
@@ -33,6 +35,7 @@ define(function (require) {
     var smallScreen = (window.innerWidth < 700) || (window.innerHeight < 600);
 
     var categories = null;
+    var word_translations = null;
     var continueBtn;
     var upperLowerButton;
 
@@ -190,6 +193,19 @@ define(function (require) {
         if (categories == null) {
             categories = require("categories");
         };
+        if (word_translations == null) {
+            switch(lang) {
+                case 'es':
+                    word_translations = require("words_es");
+                    break;
+                case 'fr':
+                    word_translations = require("words_fr");
+                    break;
+                case 'ht':
+                    word_translations = require("words_ht");
+                    break;
+            };
+        };
         var categoryNames = ['actions', 'adjectives', 'animals',
             'bodyparts', 'clothes', 'colors', 'constructions',
             'emotions', 'food', 'fruits', 'furnitures',
@@ -206,11 +222,15 @@ define(function (require) {
             if (words.length > 0) {
                 var pos = Math.floor(Math.random() * words.length);
                 var randomWord = words.splice(pos, 1)[0];
+                if (word_translations != null) {
+                    randomWord = word_translations[randomWord];
+                };
                 if (randomWord.indexOf('_') > -1) {
                     randomWord = randomWord.substring(0,
                         randomWord.indexOf('_'));
                 };
-                if (randomWord.length > 2) {
+                if ((randomWord.length > 2) &&
+                    (randomWord.indexOf(' ') == -1)) {
                     wordList.push(randomWord.toUpperCase());
                 };
             };
@@ -250,15 +270,22 @@ define(function (require) {
                 bitmap.y = introCanvas.height - bounds.height * scale;
                 stage.addChild(bitmap);
 
-                createAsyncBitmap(stage, "./images/logo.svg",
+                var font = smallScreen ? "80px Comfortaa" : "120px Comfortaa";
+                var text = new createjs.Text(_('FindAWord'), font, "#ffffff");
+                text.x = (introCanvas.width) / 2;
+                text.y = introCanvas.height * 0.12;
+                text.textAlign = "center";
+                stage.addChild(text);
+
+                createAsyncBitmap(stage, "./images/lens.svg",
                                   function(stage, bitmap) {
                     bounds = bitmap.getBounds();
-                    scale = introCanvas.width * 0.52 / bounds.width;
-                    console.log('LOGO SCALE ' + scale)
+                    scale = introCanvas.width * 0.1 / bounds.width;
+                    console.log('LENS SCALE ' + scale)
                     bitmap.scaleX = scale;
                     bitmap.scaleY = scale;
-                    bitmap.x = (introCanvas.width - (bounds.width * scale)) / 2;
-                    bitmap.y = introCanvas.height * 0.12;
+                    bitmap.x = (introCanvas.width - (bounds.width * scale)) / 3 * 2;
+                    bitmap.y = introCanvas.height * 0.15;
                     stage.addChild(bitmap);
 
                     continueBtn = createIntroButtons(_('Continue'),
@@ -431,6 +458,10 @@ define(function (require) {
         this.started = false;
         this.lowerCase = false;
         this.audioEnabled = true;
+        // xo-1 is too slow to load the sound files
+        if (navigator.userAgent.indexOf("Linux i586") != -1) {
+            this.audioEnabled = false;
+        };
         this.colors = initColors();
         this.previousPage = previousPage;
 
@@ -574,6 +605,10 @@ define(function (require) {
             showError(_('MinimumLetters'));
             return false;
         };
+        if (word.length > 12) {
+            showError(_('MaximumLetters'));
+            return false;
+        };
         for (var i = 0; i < word.length; i++) {
             if (iChars.indexOf(word.charAt(i)) > -1) {
                 showError(_('RemovePunctuation'));
@@ -693,6 +728,16 @@ define(function (require) {
             var toolbar = document.getElementById("main-toolbar");
             toolbar.style.display = "block";
             hideIntro();
+        };
+
+        // xo-1 is too slow to load the sound files
+        var loadSounds = (navigator.userAgent.indexOf("Linux i586") == -1);
+        console.log('loadSounds ' + loadSounds);
+        if (! loadSounds) {
+            audioButton.style.display = "none";
+            // remove the gradient in the right panel background too
+            rightPanel = document.getElementById("rightPanel");
+            rightPanel.style.background = "#ffffff";
         };
 
         activity.setup();
