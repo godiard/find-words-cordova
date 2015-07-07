@@ -1,3 +1,4 @@
 *.xo
 www/*
 *.patch
+platforms/android/CordovaLib/ant-build/*
