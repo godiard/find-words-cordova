@@ -51,6 +51,35 @@
             </canvas>
         </div>
         <div id="game" style="display:none;width=100%">
+            <div id="help-button">
+            </div>
+            <div id="help-display" style="display:none">
+                <div id="help-content">
+                   <h1>Ayuda</h1>
+                <p>Juega a encontrar las palabras que se muestran a la izquierda.</p>
+                <p>Puedes crear tu propia lista de palabras, agregándolas con el botón
+                <img src="icons/plus.svg" class="help-icons"/></p>
+                <p>o usar una lista seleccionada al azar presionando
+                <img src="images/dice-random.svg" class="help-icons"/></p>
+                <p>También puedes seleccionar los distintos niveles de dificultad:
+                fácil <img src="icons/easy.svg" class="help-icons"/>,
+                intermedio <img src="icons/medium.svg" class="help-icons"/>
+                (con palabras en diagonal) o difícil <img src="icons/hard.svg" class="help-icons"/>
+                (con palabras en diagonal, o escritas hacia atrás)</p>
+                <p>Si quieres quitar palabras de la lista, selecciónala, y aparecerá un botón <img src="icons/minus.svg" class="help-icons"/> para borrarla.</p>
+                <p>Si quieres saber más acerca de quienes hicieron esta aplicación, presiona aqui: <img id="about-button" src="icons/programmer.svg" class="developers-icon"/></p>
+                </div>
+                <div id="about-content" style="display:none">
+                   <h1>Acerca de esta aplicación</h1>
+                   <ul>
+                        <li><b>Diseño gráfico:</b> Paul Cotton, excepto ícono 'User'de TukTuk Design, https://thenounproject.com</li>
+                        <li><b>Sonido:</b> Efectos de gotas de agua y lluvia de http://freeSFX.co.uk</li>
+                        <li><b>Música:</b> Interpretación de Jon Sayles de una obra de John Dowland, quien vivió entre los años 1563 y 1626.
+                        Si quieres escuchar más de este tipo de música, puedes ir a http://www.jsayles.com/familypages/earlymusic.htm</li>
+                        <li><b>Programación:</b> Gonzalo Odiard de http://www.trinom.io/educacion, para OLPC Inc.</li>
+                   </ul>
+                </div>
+            </div>
             <table width="100%">
                 <tr>
                     <td id="wordList">
@@ -93,6 +122,11 @@
                     </td>
                 </tr>
             <table>
+        </div>
+        <div style="display:none">
+            <audio autoplay loop id="background-music">
+              <source src="./music/Dowland-Can-she-excuse-my-wrongs.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
 

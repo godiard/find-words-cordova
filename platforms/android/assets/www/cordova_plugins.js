@@ -165,6 +165,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.apache.cordova.media": "0.2.15",
+    "cordova-plugin-crosswalk-webview": "1.4.0",
     "org.apache.cordova.file": "1.3.2"
 }
 // BOTTOM OF METADATA

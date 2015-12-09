@@ -33,6 +33,10 @@
   width: 62px;
 }
 
+#help-button {
+  height: 42px;
+  width: 42px;
+}
 table.loadData {
   margin-top: 5px;
 }
@@ -45,4 +49,16 @@ table.loadData input {
 
 table.loadData td {
   padding: 5px;
+}
+
+#help-display {
+  font: 1.5em sans-serif;
+}
+
+#help-display p {
+  margin: 10px;
+}
+
+#help-display h1 {
+  margin: 15px;
 }

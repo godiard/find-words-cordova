@@ -8,6 +8,11 @@
     <feature name="Media">
         <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
     </feature>
+    <preference name="webView" value="org.crosswalk.engine.XWalkWebViewEngine" />
+    <preference default="15+" name="xwalkVersion" />
+    <preference default="--disable-pull-to-refresh-effect" name="xwalkCommandLine" />
+    <preference default="embedded" name="xwalkMode" />
+    <preference default="true" name="xwalkMultipleApk" />
     <name>Find-a-Word</name>
     <description>
         A game to find hidden words in a grid
@@ -26,4 +31,8 @@
     <preference name="disallowoverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="orientation" value="landscape" />
+    <preference name="xwalkVersion" value="15+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
 </widget>
