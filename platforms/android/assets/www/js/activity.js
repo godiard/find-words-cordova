@@ -96,6 +96,7 @@ define(function (require) {
         document.getElementById("game").style.display = "block";
         document.getElementById("firstPage").style.display = "block";
         document.getElementById("gameCanvas").style.display = "none";
+        document.getElementById("help-button").style.display = "block";
         page = 1;
     };
 
@@ -105,6 +106,7 @@ define(function (require) {
         document.getElementById("game").style.display = "block";
         document.getElementById("firstPage").style.display = "none";
         document.getElementById("gameCanvas").style.display = "block";
+        document.getElementById("help-button").style.display = "none";
         page = 2;
     };
 
@@ -436,10 +438,18 @@ define(function (require) {
     document.addEventListener("deviceready", function () {
         console.log('deviceready EVENT');
         document.addEventListener("backbutton", function () {
-            console.log('backbutton EVENT');
             previousPage();
             game.stop();
         }, false);
+
+        document.addEventListener("pause", function () {
+            game.pause();
+        }, false);
+
+        document.addEventListener("resume", function () {
+            game.resume();
+        }, false);
+
     }, false);
 
     function initColors() {
@@ -582,6 +592,18 @@ define(function (require) {
                 this.backgroundMusic.play();
             } else {
                 this.backgroundMusic.pause();
+            };
+        };
+
+        this.pause = function () {
+            if (this.audioEnabled) {
+                this.backgroundMusic.pause();
+            };
+        };
+
+        this.resume = function () {
+            if (this.audioEnabled) {
+                this.backgroundMusic.play();
             };
         };
 
@@ -844,7 +866,7 @@ define(function (require) {
         });
 
         createjs.CSSPlugin.install(createjs.Tween);
-        createjs.Ticker.setFPS(30);
+        createjs.Ticker.setFPS(10);
 
         addWordButton.addEventListener('click', function (e) {
             addWord();
