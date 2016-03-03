@@ -5,7 +5,7 @@
 
 ### Install Cordova
 
-The instructions are here [1], in Linux, we do:
+The instructions are [here](http://cordova.apache.org/docs/en/4.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface), in Linux, we do:
 
 ```
 $ sudo npm install -g cordova
@@ -14,26 +14,26 @@ $ sudo npm install -g cordova
 ### Install dependencies
 
 ```
-yum install java-1.7.0-openjdk-devel ant android-tools
+sudo dnf -y install java-1.8.0-openjdk-devel ant android-tools
 ```
 
-Now, you need install the Androd SDK from here [2]
+Now, you need to install the Androd SDK from [here](http://developer.android.com/sdk/installing/index.html?pkg=adt)
 
-There are a version with a complete Eclipse IDE and other "stand-alone",
-I didn't tried the stand-alone version.
+There is a version with a complete Eclipse IDE and the other "stand-alone",
+I have not tried the stand-alone version.
 
 Download the file and unzip, I installed it in the directory:
 
 /home/gonzalo/Android/adt-bundle-linux-x86_64-20140702 
 
-And set the following variable sin the env:
+And set the following variables in the env:
 
 ```
 export ANDROID_HOME=/home/gonzalo/Android/adt-bundle-linux-x86_64-20140702/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 ```
 
-You need install the api 19 sdk to build cordova apps. Can be done from Eclipse "SDK Manager"
+You need to install the api 19 sdk to build cordova apps. This can be done from Eclipse "SDK Manager"
 or from the command line using
 
 ```
@@ -123,9 +123,3 @@ To see the logs
 ```
 $ adb logcat
 ```
-
-## Links
-
-[1] http://cordova.apache.org/docs/en/4.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface
-
-[2] http://developer.android.com/sdk/installing/index.html?pkg=adt
